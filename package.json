@@ -1,0 +1,14 @@
+{
+  "name": "spur-ai-chat-agent-root",
+  "version": "1.0.0",
+  "description": "Root configuration for Spur AI live chat support agent monorepo",
+  "scripts": {
+    "install:all": "npm install --prefix backend && npm install --prefix frontend",
+    "dev": "concurrently \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\"",
+    "build:all": "npm run build --prefix backend && npm run build --prefix frontend",
+    "start:backend": "npm run start --prefix backend"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
