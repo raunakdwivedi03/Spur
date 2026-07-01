@@ -20,9 +20,8 @@ services:
         sync: false # User enters this in Render dashboard
 
   # 2. Svelte Frontend Static Site
-  - type: web
+  - type: static
     name: spur-chat-frontend
-    env: static
     plan: free
     rootDir: frontend
     buildCommand: npm install && npm run build
