@@ -1,0 +1,35 @@
+services:
+  # 1. Express Backend Web Service
+  - type: web
+    name: spur-chat-backend
+    env: node
+    plan: free
+    rootDir: backend
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 3000
+      - key: LLM_PROVIDER
+        value: mock # Defaults to mock, can be changed to openai/anthropic in Render UI
+      - key: DATABASE_URL
+        value: ./chat.db
+      - key: OPENAI_API_KEY
+        sync: false # User enters this in Render dashboard
+      - key: ANTHROPIC_API_KEY
+        sync: false # User enters this in Render dashboard
+
+  # 2. Svelte Frontend Static Site
+  - type: web
+    name: spur-chat-frontend
+    env: static
+    plan: free
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    publishDir: dist
+    envVars:
+      - key: VITE_API_BASE
+        fromService:
+          type: web
+          name: spur-chat-backend
+          property: host

@@ -1,5 +1,7 @@
 # Spur AI Support Agent Hub (Simulator Dashboard)
 
+[![Deploy to Render](https://render.com/images/deploy-to-render.button.svg)](https://render.com/deploy?repo=https://github.com/raunakdwivedi03/Spur)
+
 Welcome! This repository contains a mini AI support agent and simulator dashboard built for the Spur Founding Full-Stack Engineer take-home assignment. 
 
 It features a robust **Node.js/TypeScript/Express/SQLite** backend and a premium, responsive **Svelte/Vite/TypeScript** developer dashboard styled with obsidian-dark glassmorphism, glowing gradients, micro-animations, and full keyboard-accessibility.
